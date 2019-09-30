@@ -23,7 +23,15 @@ const pyLanguageDefinition = {
   pluginType: "language"
 };
 
+const fetchLanguageDefinition = {
+  languageId: "fetch",
+  displayName: "Fetch",
+  module: "window",
+  evaluator: "eval"
+};
+
 export const languageDefinitions = {
   py: pyLanguageDefinition,
-  js: jsLanguageDefinition
+  js: jsLanguageDefinition,
+  fetch: fetchLanguageDefinition
 };
