@@ -48,7 +48,7 @@ export function createNewNotebookOnServer() {
         state.iomd,
         originalNotebookId ? { forked_from: getRevisionID(state) } : {}
       );
-      window.history.replaceState({}, "", `/notebooks/${notebook.id}/`);
+      window.history.pushState({}, "", `/notebooks/${notebook.id}/`);
       dispatch(
         updateNotebookInfo({
           notebook_id: notebook.id,
@@ -168,7 +168,7 @@ export function revertToLatestServerRevision() {
         })
       );
       clearLocalAutosave(state);
-      window.history.replaceState({}, "", `/notebooks/${notebookId}/`);
+      window.history.pushState({}, "", `/notebooks/${notebookId}/`);
     } catch (e) {
       dispatch(updateServerSaveStatus(e));
 

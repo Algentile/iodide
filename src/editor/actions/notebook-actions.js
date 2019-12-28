@@ -38,7 +38,8 @@ export function setViewMode(viewMode) {
       const params = getUrlParams();
       if (viewMode === "REPORT_VIEW") params.viewMode = "report";
       else delete params.viewMode;
-      window.history.replaceState(
+      console.log(params);
+      window.history.pushState(
         {},
         "",
         `/notebooks/${notebookId}/?${objectToQueryString(params)}`
